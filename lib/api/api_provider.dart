@@ -1,0 +1,1 @@
+enum ApiProvider { tmdb, omdb }

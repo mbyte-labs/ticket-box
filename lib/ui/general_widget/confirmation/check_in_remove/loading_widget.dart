@@ -1,0 +1,20 @@
+import 'package:flutter/material.dart';
+import 'package:ticketbox/service/screen_size_util.dart';
+
+/// The widget shows the loading circle when submitting the data
+class CheckInRemoveConfirmationLoadingWidget extends StatelessWidget {
+  const CheckInRemoveConfirmationLoadingWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        SizedBox(height: ScreenSizeUtil.calculateSize(80)),
+        const CircularProgressIndicator(),
+        SizedBox(height: ScreenSizeUtil.calculateSize(50)),
+      ],
+    );
+  }
+}
