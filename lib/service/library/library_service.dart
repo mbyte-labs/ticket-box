@@ -11,7 +11,6 @@ import 'package:ticketbox/database/sql_store/asset_job/asset_job_repository.dart
 import 'package:ticketbox/database/sql_store/database_connection_manager.dart';
 import 'package:ticketbox/database/sql_store/db_connection_util.dart';
 import 'package:ticketbox/database/sql_store/episode/episode_repository.dart';
-import 'package:ticketbox/database/sql_store/job_state/job_error_code.dart';
 import 'package:ticketbox/database/sql_store/movie/movie_repository.dart';
 import 'package:ticketbox/database/sql_store/pending_deletion/pending_deletion_repository.dart';
 import 'package:ticketbox/database/sql_store/season/season_repository.dart';

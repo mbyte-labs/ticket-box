@@ -319,7 +319,7 @@ class ShowDetailsBloc extends Cubit<ShowDetailsState> {
                 (stub) => PosterModelBuilder.seasonStub(id, stub, showTitle: title, showPosterPath: posterPath, tracked: snapshot.tracked),
               )
               .toList();
-    seasonModels.sort((a, b) => (a.key.season ?? 0).compareTo(b.key.season ?? 0));
+    seasonModels.sort((a, b) => a.key.season.compareTo(b.key.season));
 
     final providers = region == null ? null : snapshot.providersFor(region);
     final cast = ItemCast.fromCredits(snapshot.cast);
