@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Auto Backup rules for Android 11 and lower (12+ reads data_extraction_rules.xml).
+
+  The library artwork under files/assets/ and the browse image cache's bookkeeping database are
+  re-downloadable and can run to hundreds of megabytes; Auto Backup silently stops backing up the
+  whole app once it exceeds its 25 MB quota, which would cost the user database its backup.
+-->
+<full-backup-content>
+    <exclude domain="file" path="assets/" />
+    <exclude domain="file" path="tbBrowseImages.db" />
+</full-backup-content>

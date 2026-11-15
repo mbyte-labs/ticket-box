@@ -1,0 +1,75 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+lib/firebase_options.dart
+android/app/google-services.json
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+**.g.dart
+**.freezed.dart
+
+# Web related
+lib/generated_plugin_registrant.dart
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Linux build files
+/linux/flutter/
+/linux/build/
+
+
+# Release archives (AAB, R8 mapping, native symbols) written by tool/build_release.sh
+/releases/
+# Widget Preview related
+.widget_preview/
+# Play Store screenshot captures + DB snapshot written by tool/store_screenshots (see its README)
+/store_screenshots/
+
+# Secrets — never commit. See docs/RELEASE.md
+/secrets.json
+.env
+.env.*
+key.properties
+*.ks
+*.jks
+*.keystore
+*.p12
+*.pem
+.claude/settings.local.json

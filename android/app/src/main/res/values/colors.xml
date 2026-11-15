@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Matches ThemeColors.greyScale900, which is what colorScheme.surface resolves the Flutter
+         scaffold background to. Ticket Box is dark-only (themeMode: ThemeMode.dark), so this is
+         deliberately NOT split into a values-night variant: the window behind the Flutter UI and
+         the launch splash must be dark whatever the OS theme says. Leaving it as the platform's
+         ?android:colorBackground gave a white window in day mode, which showed through the
+         status/navigation bar strips under Android 15's enforced edge-to-edge. -->
+    <color name="window_background">#FF212121</color>
+</resources>

@@ -1,0 +1,2585 @@
+{
+  "_meta": {
+    "description": "This file contains a serialized version of schema entities for drift.",
+    "version": "1.3.0"
+  },
+  "options": {
+    "store_date_time_values_as_text": false
+  },
+  "entities": [
+    {
+      "id": 0,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "shows",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "tmdb_id",
+            "getter_name": "tmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "imdb_id",
+            "getter_name": "imdbId",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "title",
+            "getter_name": "title",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "year",
+            "getter_name": "year",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "synchronized_at",
+            "getter_name": "synchronizedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "tmdb_id"
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "show_summaries",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "tmdb_id",
+            "getter_name": "tmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "title",
+            "getter_name": "title",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "year",
+            "getter_name": "year",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "overview",
+            "getter_name": "overview",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "tagline",
+            "getter_name": "tagline",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "first_aired",
+            "getter_name": "firstAired",
+            "moor_type": "dateTime",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "last_air_date",
+            "getter_name": "lastAirDate",
+            "moor_type": "dateTime",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "runtime",
+            "getter_name": "runtime",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "certification",
+            "getter_name": "certification",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "network",
+            "getter_name": "network",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "country",
+            "getter_name": "country",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "language",
+            "getter_name": "language",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "trailer",
+            "getter_name": "trailer",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "homepage",
+            "getter_name": "homepage",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "vote_average",
+            "getter_name": "voteAverage",
+            "moor_type": "double",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "vote_count",
+            "getter_name": "voteCount",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "popularity",
+            "getter_name": "popularity",
+            "moor_type": "double",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "aired_episodes",
+            "getter_name": "airedEpisodes",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "number_of_seasons",
+            "getter_name": "numberOfSeasons",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "next_episode_air_date",
+            "getter_name": "nextEpisodeAirDate",
+            "moor_type": "dateTime",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "next_episode_season",
+            "getter_name": "nextEpisodeSeason",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "next_episode_number",
+            "getter_name": "nextEpisodeNumber",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "genres",
+            "getter_name": "genres",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "status",
+            "getter_name": "status",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "synchronized_at",
+            "getter_name": "synchronizedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "tmdb_id"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "seasons",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "show_tmdb_id",
+            "getter_name": "showTmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "season",
+            "getter_name": "season",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "tmdb_id",
+            "getter_name": "tmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "title",
+            "getter_name": "title",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "episode_count",
+            "getter_name": "episodeCount",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "air_date",
+            "getter_name": "airDate",
+            "moor_type": "dateTime",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "synchronized_at",
+            "getter_name": "synchronizedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "show_tmdb_id",
+          "season"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "episodes",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "show_tmdb_id",
+            "getter_name": "showTmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "season",
+            "getter_name": "season",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "episode",
+            "getter_name": "episode",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "tmdb_id",
+            "getter_name": "tmdbId",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "imdb_id",
+            "getter_name": "imdbId",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "title",
+            "getter_name": "title",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "overview",
+            "getter_name": "overview",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "vote_average",
+            "getter_name": "voteAverage",
+            "moor_type": "double",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "vote_count",
+            "getter_name": "voteCount",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "runtime",
+            "getter_name": "runtime",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "first_aired",
+            "getter_name": "firstAired",
+            "moor_type": "dateTime",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "episode_type",
+            "getter_name": "episodeType",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "synchronized_at",
+            "getter_name": "synchronizedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "show_tmdb_id",
+          "season",
+          "episode"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "movies",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "tmdb_id",
+            "getter_name": "tmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "imdb_id",
+            "getter_name": "imdbId",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "title",
+            "getter_name": "title",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "year",
+            "getter_name": "year",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "synchronized_at",
+            "getter_name": "synchronizedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "tmdb_id"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "movie_summaries",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "tmdb_id",
+            "getter_name": "tmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "title",
+            "getter_name": "title",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "year",
+            "getter_name": "year",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "overview",
+            "getter_name": "overview",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "tagline",
+            "getter_name": "tagline",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "released",
+            "getter_name": "released",
+            "moor_type": "dateTime",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "runtime",
+            "getter_name": "runtime",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "certification",
+            "getter_name": "certification",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "country",
+            "getter_name": "country",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "language",
+            "getter_name": "language",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "trailer",
+            "getter_name": "trailer",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "homepage",
+            "getter_name": "homepage",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "vote_average",
+            "getter_name": "voteAverage",
+            "moor_type": "double",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "vote_count",
+            "getter_name": "voteCount",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "popularity",
+            "getter_name": "popularity",
+            "moor_type": "double",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "genres",
+            "getter_name": "genres",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "status",
+            "getter_name": "status",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "synchronized_at",
+            "getter_name": "synchronizedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "tmdb_id"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "genres",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "id",
+            "getter_name": "id",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "name",
+            "getter_name": "name",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "type",
+            "getter_name": "type",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const ItemTypeConverter()",
+              "dart_type_name": "ItemType"
+            }
+          },
+          {
+            "name": "synchronized_at",
+            "getter_name": "synchronizedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "id",
+          "type"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "posters",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "id",
+            "getter_name": "id",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL UNIQUE",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "unique"
+            ]
+          },
+          {
+            "name": "tmdb_id",
+            "getter_name": "tmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "season",
+            "getter_name": "season",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "episode",
+            "getter_name": "episode",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "type",
+            "getter_name": "type",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const ItemTypeConverter()",
+              "dart_type_name": "ItemType"
+            }
+          },
+          {
+            "name": "title",
+            "getter_name": "title",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "watched",
+            "getter_name": "watched",
+            "moor_type": "bool",
+            "nullable": false,
+            "customConstraints": null,
+            "defaultConstraints": "CHECK (\"watched\" IN (0, 1))",
+            "dialectAwareDefaultConstraints": {
+              "sqlite": "CHECK (\"watched\" IN (0, 1))"
+            },
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "watch_listed",
+            "getter_name": "watchListed",
+            "moor_type": "bool",
+            "nullable": false,
+            "customConstraints": null,
+            "defaultConstraints": "CHECK (\"watch_listed\" IN (0, 1))",
+            "dialectAwareDefaultConstraints": {
+              "sqlite": "CHECK (\"watch_listed\" IN (0, 1))"
+            },
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "dropped",
+            "getter_name": "dropped",
+            "moor_type": "bool",
+            "nullable": false,
+            "customConstraints": null,
+            "defaultConstraints": "CHECK (\"dropped\" IN (0, 1))",
+            "dialectAwareDefaultConstraints": {
+              "sqlite": "CHECK (\"dropped\" IN (0, 1))"
+            },
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "season_premiere",
+            "getter_name": "seasonPremiere",
+            "moor_type": "bool",
+            "nullable": false,
+            "customConstraints": null,
+            "defaultConstraints": "CHECK (\"season_premiere\" IN (0, 1))",
+            "dialectAwareDefaultConstraints": {
+              "sqlite": "CHECK (\"season_premiere\" IN (0, 1))"
+            },
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "season_finale",
+            "getter_name": "seasonFinale",
+            "moor_type": "bool",
+            "nullable": false,
+            "customConstraints": null,
+            "defaultConstraints": "CHECK (\"season_finale\" IN (0, 1))",
+            "dialectAwareDefaultConstraints": {
+              "sqlite": "CHECK (\"season_finale\" IN (0, 1))"
+            },
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "series_finale",
+            "getter_name": "seriesFinale",
+            "moor_type": "bool",
+            "nullable": false,
+            "customConstraints": null,
+            "defaultConstraints": "CHECK (\"series_finale\" IN (0, 1))",
+            "dialectAwareDefaultConstraints": {
+              "sqlite": "CHECK (\"series_finale\" IN (0, 1))"
+            },
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "mid_season_finale",
+            "getter_name": "midSeasonFinale",
+            "moor_type": "bool",
+            "nullable": false,
+            "customConstraints": null,
+            "defaultConstraints": "CHECK (\"mid_season_finale\" IN (0, 1))",
+            "dialectAwareDefaultConstraints": {
+              "sqlite": "CHECK (\"mid_season_finale\" IN (0, 1))"
+            },
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "rating",
+            "getter_name": "rating",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "user_rating",
+            "getter_name": "userRating",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "poster_url",
+            "getter_name": "posterUrl",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "no_poster_text",
+            "getter_name": "noPosterText",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "loading",
+            "getter_name": "loading",
+            "moor_type": "bool",
+            "nullable": false,
+            "customConstraints": null,
+            "defaultConstraints": "CHECK (\"loading\" IN (0, 1))",
+            "dialectAwareDefaultConstraints": {
+              "sqlite": "CHECK (\"loading\" IN (0, 1))"
+            },
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "loading_count",
+            "getter_name": "loadingCount",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "poster_url_last_updated_at",
+            "getter_name": "posterUrlLastUpdatedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "poster_data_updated_at",
+            "getter_name": "posterDataUpdatedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "id"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "show_images",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "show_tmdb_id",
+            "getter_name": "showTmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "posterUrl",
+            "getter_name": "posterUrl",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "bannerUrl",
+            "getter_name": "bannerUrl",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "synchronized_at",
+            "getter_name": "synchronizedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "show_tmdb_id"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "movie_images",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "movie_tmdb_id",
+            "getter_name": "movieTmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "posterUrl",
+            "getter_name": "posterUrl",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "bannerUrl",
+            "getter_name": "bannerUrl",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "synchronized_at",
+            "getter_name": "synchronizedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "movie_tmdb_id"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "season_images",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "show_tmdb_id",
+            "getter_name": "showTmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "season",
+            "getter_name": "season",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "posterUrl",
+            "getter_name": "posterUrl",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "synchronized_at",
+            "getter_name": "synchronizedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "show_tmdb_id",
+          "season"
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "episode_images",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "show_tmdb_id",
+            "getter_name": "showTmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "season",
+            "getter_name": "season",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "episode",
+            "getter_name": "episode",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "stillUrl",
+            "getter_name": "stillUrl",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "synchronized_at",
+            "getter_name": "synchronizedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "show_tmdb_id",
+          "season",
+          "episode"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "item_people",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "type",
+            "getter_name": "type",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const ItemTypeConverter()",
+              "dart_type_name": "ItemType"
+            }
+          },
+          {
+            "name": "item_tmdb_id",
+            "getter_name": "itemTmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "season",
+            "getter_name": "season",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "episode",
+            "getter_name": "episode",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "role",
+            "getter_name": "role",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const CastRoleConverter()",
+              "dart_type_name": "CastRole"
+            }
+          },
+          {
+            "name": "person_tmdb_id",
+            "getter_name": "personTmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "name",
+            "getter_name": "name",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "characters",
+            "getter_name": "characters",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "profilePath",
+            "getter_name": "profilePath",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "cast_order",
+            "getter_name": "castOrder",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "episode_count",
+            "getter_name": "episodeCount",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "type",
+          "item_tmdb_id",
+          "season",
+          "episode",
+          "person_tmdb_id",
+          "role"
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "item_people_syncs",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "type",
+            "getter_name": "type",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const ItemTypeConverter()",
+              "dart_type_name": "ItemType"
+            }
+          },
+          {
+            "name": "item_tmdb_id",
+            "getter_name": "itemTmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "season",
+            "getter_name": "season",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "episode",
+            "getter_name": "episode",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "synchronized_at",
+            "getter_name": "synchronizedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "images_synchronized_at",
+            "getter_name": "imagesSynchronizedAt",
+            "moor_type": "dateTime",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "type",
+          "item_tmdb_id",
+          "season",
+          "episode"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "caches",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "key",
+            "getter_name": "key",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL UNIQUE",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "unique"
+            ]
+          },
+          {
+            "name": "customData",
+            "getter_name": "customData",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "synchronized_at",
+            "getter_name": "synchronizedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "key"
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "history_items",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "history_id",
+            "getter_name": "historyId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "defaultConstraints": "PRIMARY KEY AUTOINCREMENT",
+            "dialectAwareDefaultConstraints": {
+              "sqlite": "PRIMARY KEY AUTOINCREMENT"
+            },
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "auto-increment"
+            ]
+          },
+          {
+            "name": "type",
+            "getter_name": "type",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const ItemTypeConverter()",
+              "dart_type_name": "ItemType"
+            }
+          },
+          {
+            "name": "tmdb_id",
+            "getter_name": "tmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "season",
+            "getter_name": "season",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "episode",
+            "getter_name": "episode",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "action",
+            "getter_name": "action",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const HistoryActionConverter()",
+              "dart_type_name": "HistoryAction"
+            }
+          },
+          {
+            "name": "watched_at",
+            "getter_name": "watchedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": []
+      }
+    },
+    {
+      "id": 16,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "user_ratings",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "type",
+            "getter_name": "type",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const ItemTypeConverter()",
+              "dart_type_name": "ItemType"
+            }
+          },
+          {
+            "name": "tmdb_id",
+            "getter_name": "tmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "season",
+            "getter_name": "season",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "episode",
+            "getter_name": "episode",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "rating",
+            "getter_name": "rating",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "rated_at",
+            "getter_name": "ratedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "type",
+          "tmdb_id",
+          "season",
+          "episode"
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "watchlists",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "type",
+            "getter_name": "type",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const ItemTypeConverter()",
+              "dart_type_name": "ItemType"
+            }
+          },
+          {
+            "name": "tmdb_id",
+            "getter_name": "tmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "season",
+            "getter_name": "season",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "episode",
+            "getter_name": "episode",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "listed_at",
+            "getter_name": "listedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "type",
+          "tmdb_id",
+          "season",
+          "episode"
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "show_progress_items",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "show_tmdb_id",
+            "getter_name": "showTmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "aired",
+            "getter_name": "aired",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "completed",
+            "getter_name": "completed",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "last_watched_at",
+            "getter_name": "lastWatchedAt",
+            "moor_type": "dateTime",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "computed_at",
+            "getter_name": "computedAt",
+            "moor_type": "dateTime",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "show_tmdb_id"
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "season_progress_items",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "show_tmdb_id",
+            "getter_name": "showTmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "season",
+            "getter_name": "season",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "aired",
+            "getter_name": "aired",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "completed",
+            "getter_name": "completed",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "show_tmdb_id",
+          "season"
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "episode_progress_items",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "show_tmdb_id",
+            "getter_name": "showTmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "season",
+            "getter_name": "season",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "episode",
+            "getter_name": "episode",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "completed",
+            "getter_name": "completed",
+            "moor_type": "bool",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "show_tmdb_id",
+          "season",
+          "episode"
+        ]
+      }
+    },
+    {
+      "id": 21,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "up_next_episode_items",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "show_tmdb_id",
+            "getter_name": "showTmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "season",
+            "getter_name": "season",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "episode",
+            "getter_name": "episode",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "show_tmdb_id"
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "dropped_items",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "tmdb_id",
+            "getter_name": "tmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "imdb_id",
+            "getter_name": "imdbId",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "dropped_at",
+            "getter_name": "droppedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "tmdb_id"
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "recommended_items",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "type",
+            "getter_name": "type",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const ItemTypeConverter()",
+              "dart_type_name": "ItemType"
+            }
+          },
+          {
+            "name": "tmdb_id",
+            "getter_name": "tmdbId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "recommended_at",
+            "getter_name": "recommendedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "type",
+          "tmdb_id"
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "job_states",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "job_id",
+            "getter_name": "jobId",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "state",
+            "getter_name": "state",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const JobStateConverter()",
+              "dart_type_name": "JobState"
+            }
+          },
+          {
+            "name": "error_code",
+            "getter_name": "errorCode",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const JobErrorCodeConverter()",
+              "dart_type_name": "JobErrorCode"
+            }
+          },
+          {
+            "name": "userMessage",
+            "getter_name": "userMessage",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "started_at",
+            "getter_name": "startedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "finished_at",
+            "getter_name": "finishedAt",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "job_id"
+        ]
+      }
+    }
+  ],
+  "fixed_sql": [
+    {
+      "name": "shows",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"shows\" (\"tmdb_id\" INTEGER NOT NULL, \"imdb_id\" TEXT NULL, \"title\" TEXT NULL, \"year\" INTEGER NULL, \"synchronized_at\" INTEGER NOT NULL, PRIMARY KEY (\"tmdb_id\"));"
+        }
+      ]
+    },
+    {
+      "name": "show_summaries",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"show_summaries\" (\"tmdb_id\" INTEGER NOT NULL, \"title\" TEXT NULL, \"year\" INTEGER NULL, \"overview\" TEXT NULL, \"tagline\" TEXT NULL, \"first_aired\" INTEGER NULL, \"last_air_date\" INTEGER NULL, \"runtime\" INTEGER NULL, \"certification\" TEXT NULL, \"network\" TEXT NULL, \"country\" TEXT NULL, \"language\" TEXT NULL, \"trailer\" TEXT NULL, \"homepage\" TEXT NULL, \"vote_average\" REAL NOT NULL, \"vote_count\" INTEGER NOT NULL, \"popularity\" REAL NOT NULL, \"aired_episodes\" INTEGER NOT NULL, \"number_of_seasons\" INTEGER NOT NULL, \"next_episode_air_date\" INTEGER NULL, \"next_episode_season\" INTEGER NULL, \"next_episode_number\" INTEGER NULL, \"genres\" TEXT NOT NULL, \"status\" TEXT NULL, \"synchronized_at\" INTEGER NOT NULL, PRIMARY KEY (\"tmdb_id\"));"
+        }
+      ]
+    },
+    {
+      "name": "seasons",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"seasons\" (\"show_tmdb_id\" INTEGER NOT NULL, \"season\" INTEGER NOT NULL, \"tmdb_id\" INTEGER NOT NULL, \"title\" TEXT NULL, \"episode_count\" INTEGER NULL, \"air_date\" INTEGER NULL, \"synchronized_at\" INTEGER NOT NULL, PRIMARY KEY (\"show_tmdb_id\", \"season\"));"
+        }
+      ]
+    },
+    {
+      "name": "episodes",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"episodes\" (\"show_tmdb_id\" INTEGER NOT NULL, \"season\" INTEGER NOT NULL, \"episode\" INTEGER NOT NULL, \"tmdb_id\" INTEGER NULL, \"imdb_id\" TEXT NULL, \"title\" TEXT NULL, \"overview\" TEXT NULL, \"vote_average\" REAL NOT NULL, \"vote_count\" INTEGER NOT NULL, \"runtime\" INTEGER NULL, \"first_aired\" INTEGER NULL, \"episode_type\" TEXT NULL, \"synchronized_at\" INTEGER NOT NULL, PRIMARY KEY (\"show_tmdb_id\", \"season\", \"episode\"));"
+        }
+      ]
+    },
+    {
+      "name": "movies",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"movies\" (\"tmdb_id\" INTEGER NOT NULL, \"imdb_id\" TEXT NULL, \"title\" TEXT NULL, \"year\" INTEGER NULL, \"synchronized_at\" INTEGER NOT NULL, PRIMARY KEY (\"tmdb_id\"));"
+        }
+      ]
+    },
+    {
+      "name": "movie_summaries",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"movie_summaries\" (\"tmdb_id\" INTEGER NOT NULL, \"title\" TEXT NULL, \"year\" INTEGER NULL, \"overview\" TEXT NULL, \"tagline\" TEXT NULL, \"released\" INTEGER NULL, \"runtime\" INTEGER NULL, \"certification\" TEXT NULL, \"country\" TEXT NULL, \"language\" TEXT NULL, \"trailer\" TEXT NULL, \"homepage\" TEXT NULL, \"vote_average\" REAL NOT NULL, \"vote_count\" INTEGER NOT NULL, \"popularity\" REAL NOT NULL, \"genres\" TEXT NOT NULL, \"status\" TEXT NULL, \"synchronized_at\" INTEGER NOT NULL, PRIMARY KEY (\"tmdb_id\"));"
+        }
+      ]
+    },
+    {
+      "name": "genres",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"genres\" (\"id\" INTEGER NOT NULL, \"name\" TEXT NOT NULL, \"type\" TEXT NOT NULL, \"synchronized_at\" INTEGER NOT NULL, PRIMARY KEY (\"id\", \"type\"));"
+        }
+      ]
+    },
+    {
+      "name": "posters",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"posters\" (\"id\" INTEGER NOT NULL UNIQUE, \"tmdb_id\" INTEGER NOT NULL, \"season\" INTEGER NOT NULL, \"episode\" INTEGER NOT NULL, \"type\" TEXT NOT NULL, \"title\" TEXT NOT NULL, \"watched\" INTEGER NOT NULL CHECK (\"watched\" IN (0, 1)), \"watch_listed\" INTEGER NOT NULL CHECK (\"watch_listed\" IN (0, 1)), \"dropped\" INTEGER NOT NULL CHECK (\"dropped\" IN (0, 1)), \"season_premiere\" INTEGER NOT NULL CHECK (\"season_premiere\" IN (0, 1)), \"season_finale\" INTEGER NOT NULL CHECK (\"season_finale\" IN (0, 1)), \"series_finale\" INTEGER NOT NULL CHECK (\"series_finale\" IN (0, 1)), \"mid_season_finale\" INTEGER NOT NULL CHECK (\"mid_season_finale\" IN (0, 1)), \"rating\" TEXT NULL, \"user_rating\" TEXT NULL, \"poster_url\" TEXT NULL, \"no_poster_text\" TEXT NOT NULL, \"loading\" INTEGER NOT NULL CHECK (\"loading\" IN (0, 1)), \"loading_count\" INTEGER NOT NULL, \"poster_url_last_updated_at\" INTEGER NOT NULL, \"poster_data_updated_at\" INTEGER NOT NULL, PRIMARY KEY (\"id\"));"
+        }
+      ]
+    },
+    {
+      "name": "show_images",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"show_images\" (\"show_tmdb_id\" INTEGER NOT NULL, \"posterUrl\" TEXT NULL, \"bannerUrl\" TEXT NULL, \"synchronized_at\" INTEGER NOT NULL, PRIMARY KEY (\"show_tmdb_id\"));"
+        }
+      ]
+    },
+    {
+      "name": "movie_images",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"movie_images\" (\"movie_tmdb_id\" INTEGER NOT NULL, \"posterUrl\" TEXT NULL, \"bannerUrl\" TEXT NULL, \"synchronized_at\" INTEGER NOT NULL, PRIMARY KEY (\"movie_tmdb_id\"));"
+        }
+      ]
+    },
+    {
+      "name": "season_images",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"season_images\" (\"show_tmdb_id\" INTEGER NOT NULL, \"season\" INTEGER NOT NULL, \"posterUrl\" TEXT NULL, \"synchronized_at\" INTEGER NOT NULL, PRIMARY KEY (\"show_tmdb_id\", \"season\"));"
+        }
+      ]
+    },
+    {
+      "name": "episode_images",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"episode_images\" (\"show_tmdb_id\" INTEGER NOT NULL, \"season\" INTEGER NOT NULL, \"episode\" INTEGER NOT NULL, \"stillUrl\" TEXT NULL, \"synchronized_at\" INTEGER NOT NULL, PRIMARY KEY (\"show_tmdb_id\", \"season\", \"episode\"));"
+        }
+      ]
+    },
+    {
+      "name": "item_people",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"item_people\" (\"type\" TEXT NOT NULL, \"item_tmdb_id\" INTEGER NOT NULL, \"season\" INTEGER NOT NULL, \"episode\" INTEGER NOT NULL, \"role\" TEXT NOT NULL, \"person_tmdb_id\" INTEGER NOT NULL, \"name\" TEXT NOT NULL, \"characters\" TEXT NOT NULL, \"profilePath\" TEXT NULL, \"cast_order\" INTEGER NOT NULL, \"episode_count\" INTEGER NOT NULL, PRIMARY KEY (\"type\", \"item_tmdb_id\", \"season\", \"episode\", \"person_tmdb_id\", \"role\"));"
+        }
+      ]
+    },
+    {
+      "name": "item_people_syncs",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"item_people_syncs\" (\"type\" TEXT NOT NULL, \"item_tmdb_id\" INTEGER NOT NULL, \"season\" INTEGER NOT NULL, \"episode\" INTEGER NOT NULL, \"synchronized_at\" INTEGER NOT NULL, \"images_synchronized_at\" INTEGER NULL, PRIMARY KEY (\"type\", \"item_tmdb_id\", \"season\", \"episode\"));"
+        }
+      ]
+    },
+    {
+      "name": "caches",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"caches\" (\"key\" TEXT NOT NULL UNIQUE, \"customData\" TEXT NOT NULL, \"synchronized_at\" INTEGER NOT NULL, PRIMARY KEY (\"key\"));"
+        }
+      ]
+    },
+    {
+      "name": "history_items",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"history_items\" (\"history_id\" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, \"type\" TEXT NOT NULL, \"tmdb_id\" INTEGER NOT NULL, \"season\" INTEGER NOT NULL, \"episode\" INTEGER NOT NULL, \"action\" TEXT NOT NULL, \"watched_at\" INTEGER NOT NULL);"
+        }
+      ]
+    },
+    {
+      "name": "user_ratings",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"user_ratings\" (\"type\" TEXT NOT NULL, \"tmdb_id\" INTEGER NOT NULL, \"season\" INTEGER NOT NULL, \"episode\" INTEGER NOT NULL, \"rating\" INTEGER NOT NULL, \"rated_at\" INTEGER NOT NULL, PRIMARY KEY (\"type\", \"tmdb_id\", \"season\", \"episode\"));"
+        }
+      ]
+    },
+    {
+      "name": "watchlists",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"watchlists\" (\"type\" TEXT NOT NULL, \"tmdb_id\" INTEGER NOT NULL, \"season\" INTEGER NOT NULL, \"episode\" INTEGER NOT NULL, \"listed_at\" INTEGER NOT NULL, PRIMARY KEY (\"type\", \"tmdb_id\", \"season\", \"episode\"));"
+        }
+      ]
+    },
+    {
+      "name": "show_progress_items",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"show_progress_items\" (\"show_tmdb_id\" INTEGER NOT NULL, \"aired\" INTEGER NOT NULL, \"completed\" INTEGER NOT NULL, \"last_watched_at\" INTEGER NULL, \"computed_at\" INTEGER NULL, PRIMARY KEY (\"show_tmdb_id\"));"
+        }
+      ]
+    },
+    {
+      "name": "season_progress_items",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"season_progress_items\" (\"show_tmdb_id\" INTEGER NOT NULL, \"season\" INTEGER NOT NULL, \"aired\" INTEGER NOT NULL, \"completed\" INTEGER NOT NULL, PRIMARY KEY (\"show_tmdb_id\", \"season\"));"
+        }
+      ]
+    },
+    {
+      "name": "episode_progress_items",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"episode_progress_items\" (\"show_tmdb_id\" INTEGER NOT NULL, \"season\" INTEGER NOT NULL, \"episode\" INTEGER NOT NULL, \"completed\" INTEGER NOT NULL, PRIMARY KEY (\"show_tmdb_id\", \"season\", \"episode\"));"
+        }
+      ]
+    },
+    {
+      "name": "up_next_episode_items",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"up_next_episode_items\" (\"show_tmdb_id\" INTEGER NOT NULL, \"season\" INTEGER NOT NULL, \"episode\" INTEGER NOT NULL, PRIMARY KEY (\"show_tmdb_id\"));"
+        }
+      ]
+    },
+    {
+      "name": "dropped_items",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"dropped_items\" (\"tmdb_id\" INTEGER NOT NULL, \"imdb_id\" TEXT NULL, \"dropped_at\" INTEGER NOT NULL, PRIMARY KEY (\"tmdb_id\"));"
+        }
+      ]
+    },
+    {
+      "name": "recommended_items",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"recommended_items\" (\"type\" TEXT NOT NULL, \"tmdb_id\" INTEGER NOT NULL, \"recommended_at\" INTEGER NOT NULL, PRIMARY KEY (\"type\", \"tmdb_id\"));"
+        }
+      ]
+    },
+    {
+      "name": "job_states",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"job_states\" (\"job_id\" INTEGER NOT NULL, \"state\" TEXT NOT NULL, \"error_code\" TEXT NOT NULL, \"userMessage\" TEXT NULL, \"started_at\" INTEGER NOT NULL, \"finished_at\" INTEGER NOT NULL, PRIMARY KEY (\"job_id\"));"
+        }
+      ]
+    }
+  ]
+}

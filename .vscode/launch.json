@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ticket_box - debug",
+            "request": "launch",
+            "type": "dart",
+            "toolArgs": ["--dart-define-from-file=secrets.json"],
+            "flutterMode": "debug"
+        },
+        {
+            "name": "ticket_box",
+            "request": "launch",
+            "type": "dart",
+            "toolArgs": ["--dart-define-from-file=secrets.json"]
+        },
+        {
+            "name": "ticket_box (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "toolArgs": ["--dart-define-from-file=secrets.json"],
+            "flutterMode": "profile"
+        },
+        {
+            "name": "ticket_box (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "toolArgs": ["--dart-define-from-file=secrets.json"],
+            "flutterMode": "release"
+        }
+    ]
+}
