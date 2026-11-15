@@ -91,6 +91,27 @@ phone size and positions are constants at the top of the script.
   store_screenshots/raw/02_show_details.png store_screenshots/raw/01_up_next.png store_screenshots/raw/04_show_progress.png
 ```
 
+## 3c. README images
+
+The root `README.md` shows a hero (tablet with the phone in front) and a small phone / tablet gallery
+from `docs/screenshots/` (tracked, unlike `store_screenshots/`). `compose_readme.py` puts a raw capture
+in the same dark bezel on a transparent background, so it reads on GitHub's light and dark themes, and
+scales it down (phone 560 px wide, tablet 1400 px).
+
+Phone captures are the `raw/` ones from step 2. For the tablet, launch the `Pixel_Tablet` emulator, seed
+it the same way (step 1), turn demo mode on and capture at its native 2560×1600 into
+`store_screenshots/raw_tablet/` — no `wm size` override. Give Discover a few seconds for its posters.
+
+```bash
+P=python3   # any interpreter with Pillow, e.g. one from `python3 -m venv` + `pip install pillow`
+$P tool/store_screenshots/compose_readme.py phone  store_screenshots/raw/01_up_next.png docs/screenshots/phone_up_next.png
+$P tool/store_screenshots/compose_readme.py tablet store_screenshots/raw_tablet/06_discover.png docs/screenshots/tablet_discover.png
+$P tool/store_screenshots/compose_readme.py hero   store_screenshots/raw_tablet/01_up_next.png store_screenshots/raw/02_show_details.png docs/screenshots/hero.png
+```
+
+Current set: phone `up_next`, `show_details`, `show_progress`, `stats`; tablet `discover`,
+`movie_details`, `show_progress`; hero = tablet Up next + phone show details.
+
 ## 4. Put the emulator back
 
 Quit `flutter run` (never the emulator), then restore the snapshot and re-enable the sync toggles:
