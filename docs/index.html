@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ticket Box: track your shows and movies</title>
+  <meta name="description" content="Ticket Box is a free Android app that tracks the shows and movies you watch. No account, no ads, and your data stays on your device.">
+  <meta name="theme-color" content="#1A1A1A">
+  <meta property="og:title" content="Ticket Box">
+  <meta property="og:description" content="Track your shows and movies on your Android phone. Free, no account, no ads.">
+  <meta property="og:image" content="site/icon.png">
+  <link rel="icon" type="image/png" href="site/icon.png">
+  <style>
+    @font-face {
+      font-family: 'Urbanist';
+      src: url('site/urbanist-regular.ttf') format('truetype');
+      font-weight: 400;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Urbanist';
+      src: url('site/urbanist-bold.ttf') format('truetype');
+      font-weight: 700;
+      font-display: swap;
+    }
+
+    :root {
+      --bg: #1A1A1A;
+      --bg-deep: #161616;
+      --card: #262626;
+      --line: #363636;
+      --text: #E6E6E6;
+      --muted: #BDBDBD;
+      --red: #F5484A;
+      --red-deep: #7F1D1D;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Urbanist', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      font-size: 18px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: var(--red);
+    }
+
+    h1, h2, h3, p {
+      margin: 0;
+    }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 4vw, 2.3rem);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .lead {
+      color: var(--muted);
+      max-width: 62ch;
+      margin-bottom: 36px;
+    }
+
+    /* Hero */
+    .hero {
+      background: radial-gradient(900px 500px at 85% 0%, rgba(245, 72, 74, 0.22), transparent 70%), var(--bg-deep);
+      border-bottom: 1px solid var(--line);
+      padding: 56px 0 0;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 6.5vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      color: var(--red);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.2rem;
+      max-width: 34ch;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn svg {
+      width: 20px;
+      height: 20px;
+      flex: none;
+      fill: currentColor;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #f76668;
+    }
+
+    .btn-ghost {
+      color: var(--text);
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--muted);
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      padding: 0;
+      margin: 28px 0 56px;
+    }
+
+    .pills li {
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(245, 72, 74, 0.14);
+      color: #ff9a9b;
+    }
+
+    .hero-shot {
+      align-self: end;
+      justify-self: center;
+      width: min(100%, 330px);
+      /* The phone sinks into the bottom edge of the hero. */
+      margin-bottom: -90px;
+    }
+
+    /* Free */
+    .free-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .free-card {
+      background: linear-gradient(160deg, rgba(127, 29, 29, 0.55), var(--card) 65%);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 26px;
+    }
+
+    .free-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+
+    .free-card p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .feature {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .feature h3 {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .feature h3::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--red);
+      margin-bottom: 14px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* Screenshots */
+    .shots-section {
+      background: var(--bg-deep);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .shots figure {
+      margin: 0;
+    }
+
+    .shots figcaption {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 12px;
+    }
+
+    .note {
+      margin-top: 36px;
+      padding: 16px 20px;
+      border-left: 4px solid var(--red);
+      border-radius: 0 12px 12px 0;
+      background: var(--card);
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .note strong {
+      color: var(--text);
+    }
+
+    /* Closing call to action */
+    .cta {
+      text-align: center;
+    }
+
+    .cta .lead {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta .buttons {
+      justify-content: center;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0 48px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer p + p {
+      margin-top: 10px;
+    }
+
+    footer a {
+      color: var(--text);
+    }
+
+    @media (max-width: 900px) {
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .free-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Sideways scrolling row; the page itself never scrolls horizontally. */
+      .shots {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        margin: 0 -20px;
+        padding: 0 20px 12px;
+        gap: 16px;
+      }
+
+      .shots li {
+        flex: 0 0 62%;
+        max-width: 280px;
+        scroll-snap-align: center;
+      }
+    }
+
+    @media (max-width: 720px) {
+      body {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 48px 0;
+      }
+
+      .hero {
+        padding-top: 36px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .pills {
+        margin-bottom: 36px;
+      }
+
+      .hero-shot {
+        width: min(72%, 280px);
+        margin-bottom: -70px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .btn {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="brand">
+          <img src="site/icon.png" width="56" height="56" alt="">
+          Ticket Box
+        </div>
+        <h1>Track your shows and movies. <span>Free, with no ads.</span></h1>
+        <p>Ticket Box keeps track of what you watch, what comes next and where to watch it, on your Android phone.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=ro.madcodestudios.ticket.box&amp;hl=en">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.6v18.8c0 .5.5.8.9.5l15.6-9.4c.4-.2.4-.8 0-1L4.9 2.1c-.4-.3-.9 0-.9.5z"/></svg>
+            Get it on Google Play
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/mbyte-labs/ticket-box">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+        <ul class="pills">
+          <li>Free</li>
+          <li>No ads</li>
+          <li>No account</li>
+          <li>Open source</li>
+        </ul>
+      </div>
+      <img class="hero-shot" src="screenshots/phone_up_next.png" width="560" height="1167" alt="The Up next to watch screen of Ticket Box on a phone">
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <h2>Free, and it stays that way</h2>
+        <p class="lead">Ticket Box is a personal project that has been on Google Play since 2021. It costs nothing and shows no ads.</p>
+        <div class="free-grid">
+          <div class="free-card">
+            <h3>No ads, no subscription</h3>
+            <p>Every feature is free. There is nothing to unlock and nothing to pay for.</p>
+          </div>
+          <div class="free-card">
+            <h3>No account needed</h3>
+            <p>Install it and start tracking. There is no sign-up and no login to get started.</p>
+          </div>
+          <div class="free-card">
+            <h3>Your data, your device</h3>
+            <p>Your library is stored on your phone and works offline. Export it to a file and restore it on another device.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top: 0">
+      <div class="wrap">
+        <h2>What it does</h2>
+        <p class="lead">Everything you need to follow your shows and remember the movies you have seen.</p>
+        <div class="features">
+          <div class="feature">
+            <h3>Up next to watch</h3>
+            <p>The next unwatched episode of every show you follow, with season premiere and finale badges.</p>
+          </div>
+          <div class="feature">
+            <h3>Show progress</h3>
+            <p>A progress bar for every show, per season, with the last episode you watched and when.</p>
+          </div>
+          <div class="feature">
+            <h3>Lists</h3>
+            <p>A watchlist for what you want to see, favorites for what you love, and a dropped list for shows you gave up on.</p>
+          </div>
+          <div class="feature">
+            <h3>Discover and search</h3>
+            <p>Browse popular, top rated and trending titles, filter by rating, year and genre, or search the whole TMDB catalogue.</p>
+          </div>
+          <div class="feature">
+            <h3>Details</h3>
+            <p>Overview, TMDB and IMDb ratings, trailer, cast, and where to stream, rent or buy in your country.</p>
+          </div>
+          <div class="feature">
+            <h3>Watch history</h3>
+            <p>Log anything with today's date, its release date or a date you pick, and rate it from 1 to 10.</p>
+          </div>
+          <div class="feature">
+            <h3>Stats</h3>
+            <p>Hours watched, plays, movies versus TV and your most watched show, per year and all time.</p>
+          </div>
+          <div class="feature">
+            <h3>Optional TMDB login</h3>
+            <p>Log in with a TMDB account to mirror your ratings, watchlist and favorites. Your watch history never leaves the device.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shots-section">
+      <div class="wrap">
+        <h2>Screenshots</h2>
+        <p class="lead">Ticket Box on a phone.</p>
+        <ul class="shots">
+          <li>
+            <figure>
+              <img src="screenshots/phone_up_next.png" width="560" height="1167" loading="lazy" alt="Up next to watch: a grid of shows with their next episode">
+              <figcaption>Up next to watch</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="screenshots/phone_show_details.png" width="560" height="1167" loading="lazy" alt="Show details: overview, ratings and progress">
+              <figcaption>Show details</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="screenshots/phone_show_progress.png" width="560" height="1167" loading="lazy" alt="Show progress: watched episodes per season">
+              <figcaption>Show progress</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="screenshots/phone_stats.png" width="560" height="1167" loading="lazy" alt="Stats: hours watched, plays and most watched show">
+              <figcaption>Stats</figcaption>
+            </figure>
+          </li>
+        </ul>
+        <p class="note"><strong>On tablets:</strong> Ticket Box also runs on Android tablets, but the tablet layout is not fully finished yet.</p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <h2>Get Ticket Box</h2>
+        <p class="lead">For Android 10 and up. The source code is on GitHub.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=ro.madcodestudios.ticket.box&amp;hl=en">Get it on Google Play</a>
+          <a class="btn btn-ghost" href="https://github.com/mbyte-labs/ticket-box">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Metadata and artwork come from <a href="https://www.themoviedb.org">The Movie Database</a>. This product uses the TMDB API but is not endorsed or certified by TMDB. Streaming availability is provided by JustWatch. IMDb scores come from <a href="https://www.omdbapi.com">OMDb</a>.</p>
+      <p>Ticket Box is open source under the <a href="https://github.com/mbyte-labs/ticket-box/blob/main/LICENSE">GNU Affero General Public License v3.0</a>. Google Play is a trademark of Google LLC.</p>
+    </div>
+  </footer>
+</body>
+</html>
