@@ -33,7 +33,7 @@ Ticket Box keeps track of what you watch, what comes next and where to watch it.
 - **Stats.** Hours watched, plays, movies versus TV and your most watched show, per year and all time.
 - **Your data, your device.** Everything is stored locally and works offline once a title is in your library. Export it to a JSON file and restore it on another device. You can optionally log in with a TMDB account to mirror your ratings, watchlist and favorites there. Your watch history never leaves the device.
 
-## A note on AI
+## A personal note
 
 I have been building Ticket Box since 2018, and it has been on Google Play since 2021, long before AI was something you could build apps with.
 
@@ -42,8 +42,6 @@ This is a personal project that I work on in my spare time, and my family comes 
 Ticket Box is free and I want to keep it that way, but a coffee is always welcome.
 
 I hope you enjoy it.
-
-Mihai
 
 ## Screenshots
 
