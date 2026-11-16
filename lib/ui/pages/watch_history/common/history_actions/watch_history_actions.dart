@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:logging/logging.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/common/model/item_type.dart';
 import 'package:ticketbox/service/library/watch_history_write_service.dart';
 import 'package:ticketbox/service/poster/poster_model.dart';

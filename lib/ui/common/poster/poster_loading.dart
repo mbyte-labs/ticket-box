@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/ui/theme/constants.dart';
 
 class PosterLoading extends StatelessWidget {
@@ -14,7 +14,7 @@ class PosterLoading extends StatelessWidget {
             child: Container(
               margin: GeneralMarginConstants.zeroMargin,
               alignment: Alignment.center,
-              color: Colors.black.withOpacity(0.4),
+              color: Colors.black.withValues(alpha: 0.4),
               child: const CircularProgressIndicator(),
             ),
           ),
@@ -37,7 +37,7 @@ class PosterLoadingWithTitle extends StatelessWidget {
             child: Container(
               margin: GeneralMarginConstants.zeroMargin,
               alignment: Alignment.center,
-              color: Colors.black.withOpacity(0.4),
+              color: Colors.black.withValues(alpha: 0.4),
               child: const CircularProgressIndicator(),
             ),
           ),
@@ -65,7 +65,7 @@ class PosterLoadingWithTitleAndSubtitle extends StatelessWidget {
             child: Container(
               margin: GeneralMarginConstants.zeroMargin,
               alignment: Alignment.center,
-              color: Colors.black.withOpacity(0.4),
+              color: Colors.black.withValues(alpha: 0.4),
               child: const CircularProgressIndicator(),
             ),
           ),

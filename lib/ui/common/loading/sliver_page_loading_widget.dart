@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/service/screen_size_util.dart';
 import 'package:ticketbox/ui/common/loading/progress_indicator.dart';
 import 'package:ticketbox/ui/general_widget/ticket_box_widget.dart';

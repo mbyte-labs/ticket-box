@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// Trailing spacer so the last row of a [CustomScrollView] clears the system navigation bar.
 ///

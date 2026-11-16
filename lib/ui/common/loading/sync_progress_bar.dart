@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/service/screen_size_util.dart';
 
 /// A progress bar that fills when the work is countable and animates indefinitely when it is not.

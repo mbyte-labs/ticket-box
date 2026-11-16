@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/ui/adaptive_layout_builder.dart';
 import 'package:ticketbox/ui/pages/up_next_to_watch/common/set_country_banner/set_country_banner_bloc.dart';
 import 'package:ticketbox/ui/pages/up_next_to_watch/mobile/up_next_to_watch_mobile_page.dart';

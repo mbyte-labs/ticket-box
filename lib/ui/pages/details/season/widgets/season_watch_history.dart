@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/common/model/history_action_type.dart';
 import 'package:ticketbox/service/screen_size_util.dart';
 import 'package:ticketbox/ui/pages/details/common/details_section.dart';

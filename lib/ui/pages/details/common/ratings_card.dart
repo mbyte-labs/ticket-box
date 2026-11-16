@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:intl/intl.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:simple_icons/simple_icons.dart';
 import 'package:ticketbox/service/external_rating/external_ratings.dart';
 import 'package:ticketbox/service/library/rating_service.dart';

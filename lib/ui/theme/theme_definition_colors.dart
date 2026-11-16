@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/ui/theme/theme_colors.dart';
 
 /// The app's only colour scheme. Ticket Box is dark-only by design — there is no light

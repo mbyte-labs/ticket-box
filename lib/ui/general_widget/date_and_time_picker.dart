@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class DateAndTimePicker {
   /// Create a date picker and after a date is chosen, then it creates a time picker
@@ -14,6 +14,9 @@ class DateAndTimePicker {
       initialTime = TimeOfDay(hour: selectedDate.hour, minute: selectedDate.minute);
     }
 
+    if (!context.mounted) {
+      return null;
+    }
     final selectedTime = await timePicker(context, initialTime);
 
     if (selectedTime == null) {

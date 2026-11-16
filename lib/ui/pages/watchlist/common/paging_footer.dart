@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/ui/common/loading/progress_indicator.dart';
 import 'package:ticketbox/ui/pages/watchlist/watchlist_bloc.dart';
 import 'package:ticketbox/ui/pages/watchlist/watchlist_state.dart';

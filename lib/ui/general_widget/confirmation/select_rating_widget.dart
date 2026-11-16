@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/service/screen_size_util.dart';
 import 'package:ticketbox/ui/common/poster/heart_rating_img.dart';
 import 'package:ticketbox/ui/theme/theme_colors.dart';

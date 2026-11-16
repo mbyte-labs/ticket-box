@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' hide TextDirection;
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/service/screen_size_util.dart';
 import 'package:ticketbox/service/stats/stats_models.dart';
 import 'package:ticketbox/ui/theme/theme_colors.dart';

@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/common/date_parser.dart';
 import 'package:ticketbox/common/model/mark_as_watched_target.dart';
 import 'package:ticketbox/common/model/watched_at_options.dart';

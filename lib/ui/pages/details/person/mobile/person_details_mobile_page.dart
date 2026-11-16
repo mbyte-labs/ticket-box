@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/service/screen_size_util.dart';
 import 'package:ticketbox/ui/common/loading/sliver_page_loading_widget.dart';
 import 'package:ticketbox/ui/common/sliver_bottom_inset.dart';

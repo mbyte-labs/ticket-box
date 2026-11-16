@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/service/person/person_credit.dart';
 import 'package:ticketbox/service/poster/poster_model.dart';
 import 'package:ticketbox/service/screen_size_util.dart';

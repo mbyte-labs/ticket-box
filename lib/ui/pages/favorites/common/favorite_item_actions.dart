@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:logging/logging.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/service/library/favorite_service.dart';
 import 'package:ticketbox/service/poster/poster_model.dart';
 import 'package:ticketbox/service/screen_size_util.dart';

@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/ui/adaptive_layout_builder.dart';
 import 'package:ticketbox/ui/pages/app_init_page/app_init_mobile_page.dart';
 import 'package:ticketbox/ui/pages/app_init_page/app_init_page_bloc.dart';

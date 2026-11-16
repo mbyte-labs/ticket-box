@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/service/screen_size_util.dart';
 import 'package:ticketbox/ui/common/poster/heart_rating_img.dart';
 import 'package:ticketbox/ui/theme/theme_colors.dart';
@@ -13,7 +13,7 @@ class PosterRatingPill extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(width: 1, color: Colors.transparent),
-        color: Colors.grey.withOpacity(0.6),
+        color: Colors.grey.withValues(alpha: 0.6),
       ),
       padding: ScreenSizeUtil.fromLTRB(0, 4, 0, 4),
       child: SizedBox(

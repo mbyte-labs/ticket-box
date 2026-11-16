@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/ui/pages/details/common/details_section.dart';
 
 /// Show synopsis rendered as a titled section card. Hidden when there is

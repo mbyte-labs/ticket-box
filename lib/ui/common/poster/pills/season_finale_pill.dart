@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/ui/theme/theme_colors.dart';
 
 /// Red counterpart of the green `SeasonPremierePill`: the episode ends a season (or the show).

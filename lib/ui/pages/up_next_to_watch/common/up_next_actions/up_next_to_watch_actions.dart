@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:logging/logging.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/common/model/mark_as_watched_target.dart';
 import 'package:ticketbox/service/library/check_in_service.dart';
 import 'package:ticketbox/service/poster/poster_model.dart';
