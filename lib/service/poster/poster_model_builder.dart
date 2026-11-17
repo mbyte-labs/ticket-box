@@ -116,7 +116,7 @@ class PosterModelBuilder {
       noPosterText: row.showTitle.isEmpty ? noTitle : row.showTitle,
       posterPath: row.seasonPosterPath ?? row.showPosterPath,
       tracked: true,
-      rating: null,
+      rating: _score(row.next.voteAverage),
       episodeType: EpisodeType.fromWireValue(row.next.episodeType),
       upcoming: !row.next.aired,
       airDate: row.next.airDate,

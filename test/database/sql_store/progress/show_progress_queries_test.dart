@@ -5,6 +5,7 @@ import 'package:ticketbox/common/model/show_watch_status.dart';
 import 'package:ticketbox/common/model/up_next_to_watch_order_by.dart';
 import 'package:ticketbox/database/sql_store/database_connection_manager.dart';
 import 'package:ticketbox/database/sql_store/progress/show_progress_queries.dart';
+import 'package:ticketbox/service/poster/poster_model_builder.dart';
 
 import '../../../service/catalog/catalog_test_support.dart';
 
@@ -203,7 +204,7 @@ void main() {
       await seedShow(10, title: 'Alpha', posterPath: '/alpha.jpg');
       await seedSeason(10, 1, posterPath: '/alpha-s1.jpg');
       await seedEpisode(10, 1, 1, airDate: '2026-06-01');
-      await seedEpisode(10, 1, 2, airDate: '2026-06-10', title: 'Alpha two');
+      await seedEpisode(10, 1, 2, airDate: '2026-06-10', title: 'Alpha two', voteAverage: 8.37);
       await seedEpisode(10, 1, 3, airDate: '2026-06-20');
       await playEpisode(10, 1, 1, at: DateTime.utc(2026, 6, 2));
       await seedState(10, ShowWatchStatus.watching);
@@ -272,6 +273,17 @@ void main() {
       expect(rows[1].seasonPosterPath, isNull, reason: 'the raw season value, no fallback to the show poster');
       expect(rows[1].next.aired, isFalse);
       expect(rows[2].next.airDate, isNull);
+    });
+
+    test('the next episode carries its TMDB score onto the tile; an unrated one has no pill', () async {
+      await seedLibrary();
+
+      final rows = await upNext();
+
+      expect(rows.first.next.voteAverage, 8.37);
+      expect(PosterModelBuilder.upNext(rows.first).rating, '8.4');
+      expect(rows[1].next.voteAverage, 0);
+      expect(PosterModelBuilder.upNext(rows[1]).rating, isNull);
     });
 
     test('displayAiredOnly keeps aired next episodes; onlyWithReleaseDate keeps dated ones', () async {
