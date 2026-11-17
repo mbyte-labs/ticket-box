@@ -1,4 +1,4 @@
-package ro.madcodestudios.ticket.box
+package ro.mbyte.ticketbox
 
 import android.content.Intent
 import io.flutter.embedding.android.FlutterActivity

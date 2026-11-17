@@ -13,7 +13,7 @@ plugins {
 }
 
 android {
-    namespace = "ro.madcodestudios.ticket.box"
+    namespace = "ro.mbyte.ticketbox"
     compileSdk = 36
     ndkVersion = "29.0.13846066"
 
