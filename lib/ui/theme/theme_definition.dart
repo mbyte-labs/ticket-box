@@ -1,6 +1,6 @@
 //import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/ui/theme/action_colors.dart';
 import 'package:ticketbox/ui/theme/theme_colors.dart';
 import 'package:ticketbox/ui/theme/theme_definition_colors.dart';
@@ -66,7 +66,7 @@ class ThemeDefinition {
         ),
       ),
       appBarTheme: theme.appBarTheme.copyWith(
-        color: ThemeColors.greyScale900,
+        backgroundColor: ThemeColors.greyScale900,
         surfaceTintColor: ThemeColors.dark4,
         centerTitle: false,
         // Set here rather than per-page so every AppBar/SliverAppBar gets it. The two colour

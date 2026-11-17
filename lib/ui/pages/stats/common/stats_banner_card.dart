@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/common/model/item_type.dart';
 import 'package:ticketbox/common/model/media_key.dart';
 import 'package:ticketbox/service/artwork/artwork_ref.dart';

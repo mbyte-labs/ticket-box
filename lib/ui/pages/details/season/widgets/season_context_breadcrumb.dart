@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/service/title_builder.dart';
 import 'package:ticketbox/ui/common/poster/poster_tap_navigation.dart';
 import 'package:ticketbox/ui/pages/details/common/details_breadcrumb.dart';

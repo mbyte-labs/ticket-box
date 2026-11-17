@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:collection/collection.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/service/poster/poster_model.dart';
 import 'package:ticketbox/ui/common/loading/app_bar_loading_indicator.dart';
 import 'package:ticketbox/ui/common/loading/sliver_page_loading_widget.dart';

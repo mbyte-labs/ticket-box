@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logging/logging.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:simple_icons/simple_icons.dart';
 import 'package:ticketbox/common/model/item_type.dart';
 import 'package:ticketbox/common/model/media_key.dart';

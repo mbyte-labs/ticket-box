@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/ui/theme/theme_colors.dart';
 
 /// Orange counterpart of the green `SeasonPremierePill`: an Up Next episode that has not aired yet,

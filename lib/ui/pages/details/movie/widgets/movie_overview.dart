@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/ui/pages/details/common/details_section.dart';
 
 /// Movie synopsis rendered as a titled section card, with the marketing

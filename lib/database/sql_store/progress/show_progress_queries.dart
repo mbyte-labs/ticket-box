@@ -78,6 +78,9 @@ class NextEpisode {
   /// Whether it has aired by the query's "today"; the pick itself ignores airedness.
   final bool aired;
 
+  /// TMDB's community score; 0 when nobody has rated it yet.
+  final double voteAverage;
+
   const NextEpisode({
     required this.showTmdbId,
     required this.season,
@@ -86,6 +89,7 @@ class NextEpisode {
     required this.airDate,
     required this.episodeType,
     required this.aired,
+    this.voteAverage = 0,
   });
 }
 
@@ -200,7 +204,7 @@ class ShowProgressQueries {
     final row = await _db
         .customSelect(
           '''
-      SELECT e.show_tmdb_id, e.season, e.episode, e.title, e.air_date, e.episode_type,
+      SELECT e.show_tmdb_id, e.season, e.episode, e.title, e.air_date, e.episode_type, e.vote_average,
         CASE WHEN $_airedSql THEN 1 ELSE 0 END AS aired
       FROM episodes e
       WHERE e.show_tmdb_id = ?1 AND e.season > 0
@@ -244,11 +248,11 @@ class ShowProgressQueries {
         SELECT h.tmdb_id AS show_id, ${_anchorExpressionSql(mode)} AS pos
         FROM history_items h WHERE h.type = 'episode' AND h.season > 0 GROUP BY h.tmdb_id),
       cand AS (
-        SELECT e.show_tmdb_id, e.season, e.episode, e.title, e.air_date, e.episode_type,
+        SELECT e.show_tmdb_id, e.season, e.episode, e.title, e.air_date, e.episode_type, e.vote_average,
           ROW_NUMBER() OVER (PARTITION BY e.show_tmdb_id ORDER BY e.season, e.episode) AS rn
         FROM episodes e JOIN anchors a ON a.show_id = e.show_tmdb_id
         WHERE e.season > 0 AND (e.season * 10000 + e.episode) > a.pos AND NOT $_playedSql)
-      SELECT c.show_tmdb_id, c.season, c.episode, c.title, c.air_date, c.episode_type,
+      SELECT c.show_tmdb_id, c.season, c.episode, c.title, c.air_date, c.episode_type, c.vote_average,
         CASE WHEN c.air_date IS NOT NULL AND c.air_date <= ?2 THEN 1 ELSE 0 END AS aired,
         s.title AS show_title, s.poster_path AS show_poster_path, se.poster_path AS season_poster_path, lw.last_watched_at
       FROM cand c
@@ -343,6 +347,7 @@ class ShowProgressQueries {
       airDate: row.read<String?>('air_date'),
       episodeType: row.read<String?>('episode_type'),
       aired: row.read<int>('aired') == 1,
+      voteAverage: row.read<double>('vote_average'),
     );
   }
 }

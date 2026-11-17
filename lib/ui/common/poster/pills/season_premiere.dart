@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class SeasonPremierePill extends StatelessWidget {
   static final _decoration = BoxDecoration(
     border: Border.all(width: 0, color: Colors.transparent),
-    color: Colors.green.withOpacity(0.7),
+    color: Colors.green.withValues(alpha: 0.7),
   );
 
   const SeasonPremierePill({super.key});

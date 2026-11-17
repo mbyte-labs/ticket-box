@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/service/screen_size_util.dart';
 import 'package:ticketbox/ui/common/buton/mark_as_watched_btn.dart';
 import 'package:ticketbox/ui/pages/details/common/details_pending_action.dart';

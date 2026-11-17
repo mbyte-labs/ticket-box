@@ -111,7 +111,15 @@ Future<void> seedSeason(int showTmdbId, int season, {String? posterPath, DateTim
 }
 
 /// An episode row; [airDate] is `YYYY-MM-DD` or null for an unscheduled one.
-Future<void> seedEpisode(int showTmdbId, int season, int episode, {String? airDate, String? title, String? stillPath}) {
+Future<void> seedEpisode(
+  int showTmdbId,
+  int season,
+  int episode, {
+  String? airDate,
+  String? title,
+  String? stillPath,
+  double voteAverage = 0,
+}) {
   return EpisodeRepo().insert(
     EpisodeEntity.build(
       showTmdbId: showTmdbId,
@@ -121,7 +129,7 @@ Future<void> seedEpisode(int showTmdbId, int season, int episode, {String? airDa
       imdbId: null,
       title: title ?? 'S${season}E$episode',
       overview: null,
-      voteAverage: 0,
+      voteAverage: voteAverage,
       voteCount: 0,
       runtime: 45,
       airDate: airDate,

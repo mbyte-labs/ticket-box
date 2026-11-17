@@ -61,6 +61,8 @@ app.*.map.json
 .widget_preview/
 # Play Store screenshot captures + DB snapshot written by tool/store_screenshots (see its README)
 /store_screenshots/
+# Local scap folder
+/.local/
 
 # Secrets — never commit. See docs/RELEASE.md
 /secrets.json

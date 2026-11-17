@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/ui/adaptive_layout_builder.dart';
 import 'package:ticketbox/ui/pages/details/person/mobile/person_details_mobile_page.dart';
 import 'package:ticketbox/ui/pages/details/person/person_details_bloc.dart';

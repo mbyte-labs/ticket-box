@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:logging/logging.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:ticketbox/common/exception/start_up_configuration_exception.dart';
 import 'package:ticketbox/service/configuration/start_up_configuration_service.dart';
 import 'package:ticketbox/service/user/user_details_bloc.dart';

@@ -1,28 +1,31 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
+
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:intl/intl.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:simple_icons/simple_icons.dart';
 import 'package:ticketbox/service/external_rating/external_ratings.dart';
 import 'package:ticketbox/service/library/rating_service.dart';
 import 'package:ticketbox/service/screen_size_util.dart';
 import 'package:ticketbox/ui/common/poster/heart_rating_img.dart';
 import 'package:ticketbox/ui/pages/details/common/details_section.dart';
+import 'package:ticketbox/ui/pages/details/common/rate_sheet.dart';
 import 'package:ticketbox/ui/theme/theme_colors.dart';
 
 /// The details-page Ratings card, shared by all four detail pages.
 ///
-/// Two parts: the community ratings on top — TMDB and IMDb, whichever [externalRatings] has —
-/// as brand-tinted columns sharing a single row, and a full-width 10-heart bar for the user's own
-/// rating at the bottom. On the movie, show and episode pages the bar is interactive: tapping or
-/// dragging a heart submits the new value through [onRate]; the caption beneath reads
-/// "7/10 · Your rating" once rated — with a Remove link firing [onRemoveRating] — and invites a
-/// first rating otherwise. On the season page ([RatingsCard.season]) the bar is read-only and
-/// shows the average of the user's episode ratings instead, since seasons are not rated directly.
+/// On the movie, show and episode pages it is a single row of scores: the community ratings —
+/// TMDB and IMDb, whichever [externalRatings] has — as brand-tinted columns, then the user's own
+/// rating as a last column with a heart. That column reads "Rate" until the user has rated and
+/// "7/10" afterwards; tapping it opens the rate sheet ([showRateSheet]), where a value is picked
+/// and confirmed, and the result goes out through [onRate] or [onRemoveRating].
 ///
-/// While no external rating has loaded (or none exists) the top row is a single muted
-/// "No ratings yet" placeholder, so the user-rating bar keeps its card instead of floating
-/// alone under the header. [userRating] is the 1-10 value as a string, null/empty when the user
-/// has not rated.
+/// On the season page ([RatingsCard.season]) there is nothing to rate: the community row sits
+/// above a read-only 10-heart bar showing the average of the user's episode ratings.
+///
+/// While no external rating has loaded (or none exists) a muted "No ratings yet" placeholder
+/// stands in for the community columns. [userRating] is the 1-10 value as a string, null/empty
+/// when the user has not rated.
 class RatingsCard extends StatelessWidget {
   final String? userRating;
   final ExternalRatings? externalRatings;
@@ -35,12 +38,12 @@ class RatingsCard extends StatelessWidget {
   /// Season page only: the mean of the user's episode ratings, null while no episode is rated.
   final SeasonRatingAverage? episodeAverage;
 
-  /// Called with the 1-10 value when the user sets a rating from the heart bar. Null disables
-  /// the bar while an action is already in flight.
+  /// Called with the 1-10 value the user confirmed in the rate sheet. Null disables the
+  /// "your rating" column while an action is already in flight.
   final void Function(int rating)? onRate;
 
-  /// Called when the user taps the caption's Remove link. Null hides the link — nothing rated
-  /// yet, or the same conditions that disable [onRate].
+  /// Called when the user picks Remove rating in the rate sheet. Null hides that button —
+  /// nothing rated yet, or the same conditions that disable [onRate].
   final void Function()? onRemoveRating;
 
   const RatingsCard({
@@ -63,7 +66,10 @@ class RatingsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final external = _externalHalves();
-    final halves = external.isEmpty ? [_PlaceholderHalf(colorScheme)] : external;
+    final halves = [
+      if (external.isEmpty) _PlaceholderHalf(colorScheme) else ...external,
+      if (!seasonMode) _UserRatingHalf(rating: int.tryParse(userRating ?? '') ?? 0, onRate: onRate, onRemoveRating: onRemoveRating),
+    ];
 
     return DetailsSection(
       title: 'Ratings',
@@ -81,8 +87,7 @@ class RatingsCard extends StatelessWidget {
                 ],
               ),
             ),
-            _horizontalDivider(colorScheme),
-            if (seasonMode) _episodeAverageRow(colorScheme) else _userRatingRow(colorScheme),
+            if (seasonMode) ...[_horizontalDivider(colorScheme), _episodeAverageRow(colorScheme)],
           ],
         ),
       ),
@@ -93,59 +98,6 @@ class RatingsCard extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: ScreenSizeUtil.calculateSize(12)),
       child: Divider(height: 1, thickness: 1, color: colorScheme.outlineVariant.withValues(alpha: 0.5)),
-    );
-  }
-
-  /// The full-width interactive user row: 10 hearts filled to the current rating, caption below.
-  ///
-  /// The hearts flip optimistically — the bloc emits the new value before the API call — and
-  /// [RatingBar] snaps back on failure because the reverted [userRating] prop change reaches its
-  /// `didUpdateWidget`. Empty hearts are faded so an unrated bar reads as an affordance, not a
-  /// zero score.
-  Widget _userRatingRow(ColorScheme colorScheme) {
-    final parsed = int.tryParse(userRating ?? '') ?? 0;
-    final rated = parsed > 0;
-
-    return Column(
-      children: [
-        RatingBar(
-          initialRating: parsed.toDouble(),
-          minRating: 1,
-          allowHalfRating: false,
-          itemCount: 10,
-          itemSize: ScreenSizeUtil.calculateSize(26),
-          itemPadding: EdgeInsets.symmetric(horizontal: ScreenSizeUtil.calculateSize(2)),
-          glowColor: ThemeColors.primary,
-          ignoreGestures: onRate == null,
-          ratingWidget: RatingWidget(
-            full: HeartWidgetUtil.fullImage(ThemeColors.primary, 26, 26),
-            half: HeartWidgetUtil.halfImage(ThemeColors.primary, 26, 26),
-            empty: HeartWidgetUtil.emptyImage(ThemeColors.primary.withValues(alpha: 0.45), 26, 26),
-          ),
-          onRatingUpdate: (value) {
-            final next = value.round();
-            if (next == parsed) return;
-            onRate?.call(next);
-          },
-        ),
-        SizedBox(height: ScreenSizeUtil.calculateSize(6)),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              rated ? '$parsed/10 · Your rating' : 'What did you think? Tap to rate',
-              style: TextStyle(fontSize: 11, color: colorScheme.onSurfaceVariant),
-            ),
-            if (rated && onRemoveRating != null) ...[
-              Text(' · ', style: TextStyle(fontSize: 11, color: colorScheme.onSurfaceVariant)),
-              GestureDetector(
-                onTap: onRemoveRating,
-                child: Text('Remove', style: TextStyle(fontSize: 11, color: colorScheme.primary)),
-              ),
-            ],
-          ],
-        ),
-      ],
     );
   }
 
@@ -218,8 +170,8 @@ class RatingsCard extends StatelessWidget {
   }
 }
 
-/// The top row's stand-in while there is nothing to show: keeps the row's height and the card's
-/// shape so the heart bar below does not jump when a rating does arrive.
+/// The row's stand-in for the community columns while there is nothing to show, so the card
+/// keeps its height and shape when a rating does arrive.
 class _PlaceholderHalf extends StatelessWidget {
   final ColorScheme colorScheme;
 
@@ -227,16 +179,12 @@ class _PlaceholderHalf extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(Icons.star_border_rounded, size: 28, color: colorScheme.onSurfaceVariant.withValues(alpha: 0.6)),
-        SizedBox(width: ScreenSizeUtil.calculateSize(10)),
-        Text(
-          'No ratings yet',
-          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: colorScheme.onSurfaceVariant),
-        ),
-      ],
+    return _HalfLayout(
+      icon: Icon(Icons.star_border_rounded, size: 28, color: colorScheme.onSurfaceVariant.withValues(alpha: 0.6)),
+      child: Text(
+        'No ratings yet',
+        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: colorScheme.onSurfaceVariant),
+      ),
     );
   }
 }
@@ -252,20 +200,113 @@ class _RatingHalf extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        icon,
-        SizedBox(width: ScreenSizeUtil.calculateSize(10)),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
+    return _HalfLayout(
+      icon: icon,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(value, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+          Text(caption, style: TextStyle(fontSize: 11, color: colorScheme.onSurfaceVariant)),
+        ],
+      ),
+    );
+  }
+}
+
+/// The user's own rating as the row's last column: a heart, then "7/10" (or "Rate" while
+/// unrated) over a "Your rating" caption. Tapping opens the rate sheet and forwards what the
+/// user confirmed there; a null [onRate] makes the column inert.
+class _UserRatingHalf extends StatelessWidget {
+  /// The 1-10 rating, 0 while unrated.
+  final int rating;
+  final void Function(int rating)? onRate;
+  final void Function()? onRemoveRating;
+
+  const _UserRatingHalf({required this.rating, required this.onRate, required this.onRemoveRating});
+
+  bool get _rated => rating > 0;
+
+  Future<void> _openSheet(BuildContext context) async {
+    final result = await showRateSheet(context, currentRating: _rated ? rating : null, canRemove: _rated && onRemoveRating != null);
+    switch (result) {
+      case RateSheetRated(rating: final picked):
+        onRate?.call(picked);
+      case RateSheetRemoved():
+        onRemoveRating?.call();
+      case null:
+        break;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final captionStyle = TextStyle(fontSize: 11, color: colorScheme.onSurfaceVariant);
+
+    return Semantics(
+      button: true,
+      label: _rated ? 'Your rating, $rating out of 10. Change' : 'Rate',
+      excludeSemantics: true,
+      child: Material(
+        type: MaterialType.transparency,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(10),
+          onTap: onRate == null ? null : () => unawaited(_openSheet(context)),
+          child: _HalfLayout(
+            icon: _rated ? HeartWidgetUtil.fullImage(ThemeColors.primary, 28, 28) : HeartWidgetUtil.emptyImage(ThemeColors.primary, 28, 28),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (_rated)
+                  Text.rich(
+                    TextSpan(
+                      text: '$rating',
+                      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                      children: [
+                        TextSpan(
+                          text: '/10',
+                          style: captionStyle.copyWith(fontWeight: FontWeight.w400),
+                        ),
+                      ],
+                    ),
+                  )
+                else
+                  const Text('Rate', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+                Text('Your rating', style: captionStyle),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// One column of the scores row: [icon], a gap, then [child], centred and scaled down as a
+/// whole when three columns leave it less room than it wants.
+class _HalfLayout extends StatelessWidget {
+  final Widget icon;
+  final Widget child;
+
+  const _HalfLayout({required this.icon, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: ScreenSizeUtil.calculateSize(4)),
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Text(value, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
-            Text(caption, style: TextStyle(fontSize: 11, color: colorScheme.onSurfaceVariant)),
+            icon,
+            SizedBox(width: ScreenSizeUtil.calculateSize(8)),
+            child,
           ],
         ),
-      ],
+      ),
     );
   }
 }
